@@ -13,7 +13,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur">
-      <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 sm:px-8">
+      <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 sm:px-8 lg:flex lg:justify-between">
         <a href="#top" className="flex min-w-0 flex-col leading-none">
           <span className="font-script text-2xl text-primary sm:text-3xl">Meals</span>
           <span className="truncate text-[0.7rem] font-medium tracking-[0.28em] text-muted-foreground uppercase">
