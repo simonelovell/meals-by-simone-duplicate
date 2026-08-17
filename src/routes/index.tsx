@@ -1,24 +1,58 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Toaster } from "sonner";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import { Footer, Header } from "@/components/landing/chrome";
+import {
+  Benefits,
+  Founder,
+  Hero,
+  HowItWorks,
+  Newsletter,
+  Pricing,
+  Recipes,
+  SocialProof,
+  Testimonials,
+  VideoSection,
+} from "@/components/landing/sections";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Meals By Simone — Family Meal Plans Made Simple" },
+      {
+        name: "description",
+        content:
+          "Weekly family meal plans, recipes and grocery lists from a certified nutritionist and strength coach. Start your free trial today.",
+      },
+      { property: "og:title", content: "Meals By Simone — Family Meal Plans Made Simple" },
+      {
+        property: "og:description",
+        content:
+          "Weekly family meal plans, recipes and grocery lists from a certified nutritionist and strength coach.",
+      },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background font-sans">
+      <Header />
+      <main>
+        <Hero />
+        <Testimonials />
+        <VideoSection />
+        <HowItWorks />
+        <Founder />
+        <SocialProof />
+        <Recipes />
+        <Benefits />
+        <Pricing />
+        <Newsletter />
+      </main>
+      <Footer />
+      <Toaster position="top-center" />
     </div>
   );
 }
