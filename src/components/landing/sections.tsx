@@ -28,14 +28,12 @@ const accentBtn =
   "inline-flex items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-base font-medium text-accent-foreground shadow-soft transition-transform hover:-translate-y-0.5";
 
 function Eyebrow({ children }: { children: string }) {
-  return (
-    <p className="font-script text-3xl text-accent sm:text-4xl">{children}</p>
-  );
+  return <p className="font-script text-3xl text-accent sm:text-4xl">{children}</p>;
 }
 
 export function Hero() {
   return (
-    <section id="top" className="mx-auto max-w-6xl px-5 pt-12 pb-20 sm:px-8 sm:pt-20 lg:pb-28">
+    <section id="top" className="mx-auto max-w-6xl px-5 pt-14 pb-24 sm:px-8 sm:pt-24 lg:pb-36">
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div>
           <span className="inline-flex items-center gap-2 rounded-full bg-sage-soft px-4 py-1.5 text-xs font-medium tracking-wide text-primary uppercase">
@@ -127,10 +125,11 @@ export function Testimonials() {
 
 export function VideoSection() {
   return (
-    <section id="video" className="mx-auto max-w-4xl px-5 py-20 text-center sm:px-8 lg:py-28">
+    <section id="video" className="mx-auto max-w-4xl px-5 py-24 text-center sm:px-8 lg:py-36">
       <Eyebrow>Come say hi</Eyebrow>
       <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-        A two-minute look inside the membership
+        A two-minute look{" "}
+        <span className="font-script text-4xl text-accent sm:text-5xl">inside the membership</span>
       </h2>
       <div className="group relative mt-10 overflow-hidden rounded-[2.5rem] shadow-soft">
         <img
@@ -161,15 +160,18 @@ export function VideoSection() {
 
 const steps = [
   { title: "Sign Up", copy: "Join the membership and tell us who you're feeding." },
-  { title: "Grab Your Menu", copy: "Every Sunday a fresh menu and grocery list lands in your inbox." },
+  {
+    title: "Grab Your Menu",
+    copy: "Every Sunday a fresh menu and grocery list lands in your inbox.",
+  },
   { title: "Get Cooking", copy: "Short, tested recipes — most on the table in 30 minutes." },
   { title: "Enjoy", copy: "Sit down together, no scrambling, no takeout guilt." },
 ];
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="bg-sage-soft/50 py-20 lg:py-28">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:gap-16">
+    <section id="how-it-works" className="bg-sage-soft/50 py-24 lg:py-36">
+      <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:gap-20">
         <div className="overflow-hidden rounded-[2.5rem] shadow-soft">
           <img
             src={howItWorksImg}
@@ -182,11 +184,13 @@ export function HowItWorks() {
         </div>
         <div>
           <Eyebrow>Simple as can be</Eyebrow>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">How it works</h2>
-          <ol className="mt-8 space-y-6">
+          <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+            How it <span className="font-script text-4xl text-accent sm:text-5xl">works</span>
+          </h2>
+          <ol className="mt-10 space-y-8">
             {steps.map((step, i) => (
               <li key={step.title} className="flex gap-5">
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-card font-semibold text-primary shadow-soft">
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border-2 border-primary bg-transparent font-script text-2xl text-primary">
                   {i + 1}
                 </span>
                 <div className="min-w-0">
@@ -204,8 +208,8 @@ export function HowItWorks() {
 
 export function Founder() {
   return (
-    <section id="about" className="mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:py-28">
-      <div className="grid items-center gap-12 lg:grid-cols-[0.85fr_1fr] lg:gap-16">
+    <section id="about" className="mx-auto max-w-6xl px-5 py-24 sm:px-8 lg:py-36">
+      <div className="grid items-center gap-12 lg:grid-cols-[0.85fr_1fr] lg:gap-20">
         <div className="overflow-hidden rounded-[2.5rem] shadow-soft">
           <img
             src={founderImg}
@@ -219,7 +223,9 @@ export function Founder() {
         <div>
           <Eyebrow>Hi, I'm Simone</Eyebrow>
           <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-            Twenty years of helping people eat well — without the overwhelm
+            Twenty years of helping people{" "}
+            <span className="font-script text-4xl text-accent sm:text-5xl">eat well</span> — without
+            the overwhelm
           </h2>
           <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground">
             <p>
@@ -261,11 +267,11 @@ const instaTiles = [recipe3, recipe1, recipe6, recipe4, recipe5, recipe2];
 
 export function SocialProof() {
   return (
-    <section className="bg-secondary/60 py-20 lg:py-28">
+    <section className="bg-secondary/60 py-24 lg:py-36">
       <div className="mx-auto max-w-6xl px-5 text-center sm:px-8">
         <Eyebrow>Follow along</Eyebrow>
         <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">@mealsbysimone</h2>
-        <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-6">
+        <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-6">
           {instaTiles.map((src, i) => (
             <a
               key={i}
@@ -303,30 +309,30 @@ const recipes = [
 
 export function Recipes() {
   return (
-    <section id="recipes" className="mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:py-28">
+    <section id="recipes" className="mx-auto max-w-6xl px-5 py-24 sm:px-8 lg:py-36">
       <div className="text-center">
         <Eyebrow>A little sneak peek</Eyebrow>
         <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-          What's on this week's menu
+          What's on{" "}
+          <span className="font-script text-4xl text-accent sm:text-5xl">this week's menu</span>
         </h2>
       </div>
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-16 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
         {recipes.map((r) => (
-          <article
-            key={r.name}
-            className="overflow-hidden rounded-[2rem] bg-card shadow-soft transition-transform hover:-translate-y-1"
-          >
-            <img
-              src={r.src}
-              alt={r.name}
-              loading="lazy"
-              width={800}
-              height={800}
-              className="aspect-[4/3] w-full object-cover"
-            />
-            <div className="px-6 py-5">
+          <article key={r.name} className="group">
+            <div className="overflow-hidden rounded-[2rem] shadow-soft">
+              <img
+                src={r.src}
+                alt={r.name}
+                loading="lazy"
+                width={800}
+                height={800}
+                className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+            <div className="mt-4 text-center">
               <h3 className="text-lg font-semibold">{r.name}</h3>
-              <p className="mt-1 text-sm text-muted-foreground">{r.tag}</p>
+              <p className="mt-1 font-script text-xl text-accent">{r.tag}</p>
             </div>
           </article>
         ))}
@@ -355,7 +361,7 @@ const benefits: { Icon: LucideIcon; title: string; copy: string }[] = [
 
 export function Benefits() {
   return (
-    <section className="bg-terracotta-soft/60 py-20 lg:py-28">
+    <section className="bg-terracotta-soft/60 py-24 lg:py-36">
       <div className="mx-auto grid max-w-6xl gap-6 px-5 sm:px-8 lg:grid-cols-3">
         {benefits.map(({ Icon, title, copy }) => (
           <div key={title} className="rounded-[2rem] bg-card px-8 py-10 text-center shadow-soft">
@@ -397,11 +403,12 @@ const plans = [
 
 export function Pricing() {
   return (
-    <section id="pricing" className="mx-auto max-w-5xl px-5 py-20 sm:px-8 lg:py-28">
+    <section id="pricing" className="mx-auto max-w-5xl px-5 py-24 sm:px-8 lg:py-36">
       <div className="text-center">
         <Eyebrow>Join the table</Eyebrow>
         <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-          Pick your plan, start free
+          Pick your plan,{" "}
+          <span className="font-script text-4xl text-accent sm:text-5xl">start free</span>
         </h2>
         <p className="mx-auto mt-4 max-w-md text-muted-foreground">
           Every membership starts with a 7-day free trial. No commitment, no pressure.
@@ -434,17 +441,12 @@ export function Pricing() {
             <ul className="mt-7 space-y-3 text-sm">
               {plan.features.map((f) => (
                 <li key={f} className="flex items-start gap-2">
-                  <Check
-                    className={`mt-0.5 h-4 w-4 shrink-0 ${plan.best ? "" : "text-primary"}`}
-                  />
+                  <Check className={`mt-0.5 h-4 w-4 shrink-0 ${plan.best ? "" : "text-primary"}`} />
                   {f}
                 </li>
               ))}
             </ul>
-            <a
-              href="#newsletter"
-              className={`mt-9 w-full ${plan.best ? accentBtn : primaryBtn}`}
-            >
+            <a href="#newsletter" className={`mt-9 w-full ${plan.best ? accentBtn : primaryBtn}`}>
               Sign Up Now
             </a>
           </div>
@@ -465,11 +467,12 @@ export function Newsletter() {
   }
 
   return (
-    <section id="newsletter" className="mx-auto max-w-5xl px-5 pb-20 sm:px-8 lg:pb-28">
-      <div className="rounded-[2.5rem] bg-sage-soft/70 px-6 py-14 text-center sm:px-12">
+    <section id="newsletter" className="mx-auto max-w-5xl px-5 pb-24 sm:px-8 lg:pb-36">
+      <div className="rounded-[2.5rem] bg-sage-soft/70 px-6 py-16 text-center sm:px-12">
         <Eyebrow>Not ready yet?</Eyebrow>
         <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-          Get a free family menu every month
+          Get a free family menu{" "}
+          <span className="font-script text-4xl text-accent sm:text-5xl">every month</span>
         </h2>
         <p className="mx-auto mt-4 max-w-md text-muted-foreground">
           One email, five dinners, a grocery list. Unsubscribe whenever you like.
