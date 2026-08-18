@@ -42,11 +42,7 @@ export function Hero() {
             <Sparkles className="h-3.5 w-3.5" /> New menus every Sunday
           </span>
           <h1 className="mt-6 text-4xl leading-[1.08] font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            Never ask{" "}
-            <span className="font-script text-5xl text-accent sm:text-6xl lg:text-7xl">
-              "what's for dinner?"
-            </span>{" "}
-            again
+            TEST SYNC 123
           </h1>
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground">
             Weekly family meal plans, simple recipes and a done-for-you grocery list — built by a
