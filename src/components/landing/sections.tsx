@@ -1,5 +1,6 @@
 import {
   Check,
+  Clock,
   Heart,
   Instagram,
   PiggyBank,
@@ -23,12 +24,14 @@ import recipe5 from "@/assets/recipe-5.jpg";
 import recipe6 from "@/assets/recipe-6.jpg";
 
 const primaryBtn =
-  "inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-medium text-primary-foreground shadow-soft transition-transform hover:-translate-y-0.5";
+  "inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-medium tracking-wide text-primary-foreground uppercase transition-opacity hover:opacity-85";
 const accentBtn =
-  "inline-flex items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-base font-medium text-accent-foreground shadow-soft transition-transform hover:-translate-y-0.5";
+  "inline-flex items-center justify-center gap-2 rounded-full border border-foreground/15 bg-tan px-7 py-3.5 text-sm font-medium tracking-wide text-foreground uppercase transition-opacity hover:opacity-85";
 
 function Eyebrow({ children }: { children: string }) {
-  return <p className="font-script text-3xl text-accent sm:text-4xl">{children}</p>;
+  return (
+    <p className="text-xs font-semibold tracking-[0.25em] text-accent uppercase">{children}</p>
+  );
 }
 
 export function Hero() {
@@ -36,14 +39,11 @@ export function Hero() {
     <section id="top" className="mx-auto max-w-6xl px-5 pt-14 pb-24 sm:px-8 sm:pt-24 lg:pb-36">
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full bg-sage-soft px-4 py-1.5 text-xs font-medium tracking-wide text-primary uppercase">
+          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-4 py-1.5 text-xs font-medium tracking-wide text-foreground uppercase">
             <Sparkles className="h-3.5 w-3.5" /> New menus every Sunday
           </span>
-          <h1 className="mt-6 text-4xl leading-[1.08] font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            Never ask{" "}
-            <span className="font-script text-5xl text-accent sm:text-6xl lg:text-7xl">
-              "what's for dinner?"
-            </span>{" "}
+          <h1 className="mt-6 font-serif text-4xl leading-[1.1] font-medium tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+            Never ask <span className="font-serif text-accent italic">"what's for dinner?"</span>{" "}
             again
           </h1>
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground">
@@ -56,9 +56,9 @@ export function Hero() {
             </a>
             <a
               href="#video"
-              className="inline-flex items-center gap-3 text-base font-medium text-foreground transition-colors hover:text-primary"
+              className="inline-flex items-center gap-3 text-base font-medium text-foreground transition-colors hover:text-accent"
             >
-              <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-card shadow-soft">
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card">
                 <Play className="h-4 w-4 fill-current" />
               </span>
               Watch Video
@@ -67,7 +67,7 @@ export function Hero() {
         </div>
 
         <div className="relative">
-          <div className="overflow-hidden rounded-[2.5rem] shadow-soft">
+          <div className="overflow-hidden rounded-xl border border-border">
             <img
               src={heroImg}
               alt="Simone serving a healthy family dinner in a sunlit kitchen"
@@ -76,8 +76,8 @@ export function Hero() {
               className="h-full w-full object-cover"
             />
           </div>
-          <div className="absolute -bottom-6 left-4 rounded-3xl bg-card px-5 py-4 shadow-soft sm:left-8">
-            <p className="font-script text-2xl text-accent">2,400+ families</p>
+          <div className="absolute -bottom-6 left-4 rounded-lg border border-border bg-card px-5 py-4 sm:left-8">
+            <p className="font-serif text-2xl text-accent italic">2,400+ families</p>
             <p className="text-xs tracking-wide text-muted-foreground uppercase">
               eating better every week
             </p>
@@ -108,7 +108,7 @@ export function Testimonials() {
         {strip.map((q, i) => (
           <figure
             key={`${q.name}-${i}`}
-            className="w-[19rem] shrink-0 rounded-3xl bg-card px-6 py-5 shadow-soft"
+            className="w-[19rem] shrink-0 rounded-lg border border-border bg-card px-6 py-5"
           >
             <blockquote className="text-sm leading-relaxed text-foreground/85">
               “{q.text}”
@@ -127,11 +127,10 @@ export function VideoSection() {
   return (
     <section id="video" className="mx-auto max-w-4xl px-5 py-24 text-center sm:px-8 lg:py-36">
       <Eyebrow>Come say hi</Eyebrow>
-      <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-        A two-minute look{" "}
-        <span className="font-script text-4xl text-accent sm:text-5xl">inside the membership</span>
+      <h2 className="mt-2 font-serif text-3xl font-medium tracking-tight sm:text-4xl">
+        A two-minute look <span className="text-accent italic">inside the membership</span>
       </h2>
-      <div className="group relative mt-10 overflow-hidden rounded-[2.5rem] shadow-soft">
+      <div className="group relative mt-10 overflow-hidden rounded-xl border border-border">
         <img
           src={videoThumb}
           alt="A family sharing a healthy dinner around a wooden table"
@@ -146,7 +145,7 @@ export function VideoSection() {
           onClick={() => toast("The intro video will play here once uploaded.")}
           className="absolute inset-0 grid place-items-center bg-foreground/15 transition-colors group-hover:bg-foreground/25"
         >
-          <span className="inline-flex h-20 w-20 items-center justify-center rounded-full bg-card shadow-soft">
+          <span className="inline-flex h-20 w-20 items-center justify-center rounded-full bg-card">
             <Play className="h-7 w-7 fill-current text-primary" />
           </span>
         </button>
@@ -170,9 +169,9 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="bg-sage-soft/50 py-24 lg:py-36">
+    <section id="how-it-works" className="bg-secondary/60 py-24 lg:py-36">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:gap-20">
-        <div className="overflow-hidden rounded-[2.5rem] shadow-soft">
+        <div className="overflow-hidden rounded-xl border border-border">
           <img
             src={howItWorksImg}
             alt="Weekly menu printout beside prepped meal containers"
@@ -184,13 +183,13 @@ export function HowItWorks() {
         </div>
         <div>
           <Eyebrow>Simple as can be</Eyebrow>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-            How it <span className="font-script text-4xl text-accent sm:text-5xl">works</span>
+          <h2 className="mt-2 font-serif text-3xl font-medium tracking-tight sm:text-4xl">
+            How it <span className="text-accent italic">works</span>
           </h2>
           <ol className="mt-10 space-y-8">
             {steps.map((step, i) => (
               <li key={step.title} className="flex gap-5">
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border-2 border-primary bg-transparent font-script text-2xl text-primary">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-primary font-serif text-lg text-primary">
                   {i + 1}
                 </span>
                 <div className="min-w-0">
@@ -210,7 +209,7 @@ export function Founder() {
   return (
     <section id="about" className="mx-auto max-w-6xl px-5 py-24 sm:px-8 lg:py-36">
       <div className="grid items-center gap-12 lg:grid-cols-[0.85fr_1fr] lg:gap-20">
-        <div className="overflow-hidden rounded-[2.5rem] shadow-soft">
+        <div className="overflow-hidden rounded-xl border border-border">
           <img
             src={founderImg}
             alt="Simone, certified nutritionist and strength and conditioning coach"
@@ -222,10 +221,9 @@ export function Founder() {
         </div>
         <div>
           <Eyebrow>Hi, I'm Simone</Eyebrow>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-            Twenty years of helping people{" "}
-            <span className="font-script text-4xl text-accent sm:text-5xl">eat well</span> — without
-            the overwhelm
+          <h2 className="mt-2 font-serif text-3xl font-medium tracking-tight sm:text-4xl">
+            Twenty years of helping people <span className="text-accent italic">eat well</span> —
+            without the overwhelm
           </h2>
           <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground">
             <p>
@@ -256,7 +254,7 @@ export function Founder() {
               </li>
             ))}
           </ul>
-          <p className="mt-8 font-script text-4xl text-accent">Simone</p>
+          <p className="mt-8 font-serif text-3xl text-accent italic">Simone</p>
         </div>
       </div>
     </section>
@@ -270,13 +268,15 @@ export function SocialProof() {
     <section className="bg-secondary/60 py-24 lg:py-36">
       <div className="mx-auto max-w-6xl px-5 text-center sm:px-8">
         <Eyebrow>Follow along</Eyebrow>
-        <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">@mealsbysimone</h2>
+        <h2 className="mt-2 font-serif text-3xl font-medium tracking-tight sm:text-4xl">
+          @mealsbysimone
+        </h2>
         <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-6">
           {instaTiles.map((src, i) => (
             <a
               key={i}
               href="#top"
-              className="group relative overflow-hidden rounded-3xl shadow-soft"
+              className="group relative overflow-hidden rounded-lg border border-border"
               aria-label="View Instagram post"
             >
               <img
@@ -299,12 +299,12 @@ export function SocialProof() {
 }
 
 const recipes = [
-  { src: recipe1, name: "Lemon Herb Chicken Bowl", tag: "30 minutes · High protein" },
-  { src: recipe2, name: "Honey Garlic Salmon", tag: "25 minutes · Omega-3 rich" },
-  { src: recipe3, name: "Cozy Turkey Chili", tag: "One pot · Freezer friendly" },
-  { src: recipe4, name: "Mediterranean Shrimp Bowl", tag: "20 minutes · Light & fresh" },
-  { src: recipe5, name: "Rainbow Veggie Stir Fry", tag: "Meatless · Kid approved" },
-  { src: recipe6, name: "Banana Oat Protein Pancakes", tag: "Breakfast · Batch cook" },
+  { src: recipe1, name: "Lemon Herb Chicken Bowl", time: "30 minutes" },
+  { src: recipe2, name: "Honey Garlic Salmon", time: "25 minutes" },
+  { src: recipe3, name: "Cozy Turkey Chili", time: "One pot" },
+  { src: recipe4, name: "Mediterranean Shrimp Bowl", time: "20 minutes" },
+  { src: recipe5, name: "Rainbow Veggie Stir Fry", time: "Meatless" },
+  { src: recipe6, name: "Banana Oat Protein Pancakes", time: "Batch cook" },
 ];
 
 export function Recipes() {
@@ -312,27 +312,38 @@ export function Recipes() {
     <section id="recipes" className="mx-auto max-w-6xl px-5 py-24 sm:px-8 lg:py-36">
       <div className="text-center">
         <Eyebrow>A little sneak peek</Eyebrow>
-        <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-          What's on{" "}
-          <span className="font-script text-4xl text-accent sm:text-5xl">this week's menu</span>
+        <h2 className="mt-2 font-serif text-3xl font-medium tracking-tight sm:text-4xl">
+          What's on <span className="text-accent italic">this week's menu</span>
         </h2>
       </div>
-      <div className="mt-16 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {recipes.map((r) => (
-          <article key={r.name} className="group">
-            <div className="overflow-hidden rounded-[2rem] shadow-soft">
-              <img
-                src={r.src}
-                alt={r.name}
-                loading="lazy"
-                width={800}
-                height={800}
-                className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
-            <div className="mt-4 text-center">
-              <h3 className="text-lg font-semibold">{r.name}</h3>
-              <p className="mt-1 font-script text-xl text-accent">{r.tag}</p>
+          <article
+            key={r.name}
+            className="group relative overflow-hidden rounded-lg border border-border"
+          >
+            <img
+              src={r.src}
+              alt={r.name}
+              loading="lazy"
+              width={800}
+              height={800}
+              className="aspect-[4/5] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <button
+              type="button"
+              aria-label={`Save ${r.name}`}
+              className="absolute top-3 right-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-background/90 text-foreground/70 transition-colors hover:text-accent"
+            >
+              <Heart className="h-4 w-4" />
+            </button>
+            <div className="absolute inset-x-3 bottom-3 rounded-md bg-background/90 px-4 py-3 text-center backdrop-blur-sm">
+              <h3 className="font-serif text-base font-medium tracking-tight uppercase">
+                {r.name}
+              </h3>
+              <p className="mt-1 flex items-center justify-center gap-1.5 text-xs text-muted-foreground uppercase">
+                <Clock className="h-3 w-3" /> {r.time}
+              </p>
             </div>
           </article>
         ))}
@@ -361,11 +372,14 @@ const benefits: { Icon: LucideIcon; title: string; copy: string }[] = [
 
 export function Benefits() {
   return (
-    <section className="bg-terracotta-soft/60 py-24 lg:py-36">
+    <section className="bg-terracotta-soft/40 py-24 lg:py-36">
       <div className="mx-auto grid max-w-6xl gap-6 px-5 sm:px-8 lg:grid-cols-3">
         {benefits.map(({ Icon, title, copy }) => (
-          <div key={title} className="rounded-[2rem] bg-card px-8 py-10 text-center shadow-soft">
-            <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-sage-soft">
+          <div
+            key={title}
+            className="rounded-lg border border-border bg-card px-8 py-10 text-center"
+          >
+            <span className="inline-flex h-16 w-16 items-center justify-center rounded-full border border-border bg-secondary">
               <Icon className="h-7 w-7 text-primary" />
             </span>
             <h3 className="mt-6 text-xl font-semibold">{title}</h3>
@@ -406,9 +420,8 @@ export function Pricing() {
     <section id="pricing" className="mx-auto max-w-5xl px-5 py-24 sm:px-8 lg:py-36">
       <div className="text-center">
         <Eyebrow>Join the table</Eyebrow>
-        <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-          Pick your plan,{" "}
-          <span className="font-script text-4xl text-accent sm:text-5xl">start free</span>
+        <h2 className="mt-2 font-serif text-3xl font-medium tracking-tight sm:text-4xl">
+          Pick your plan, <span className="text-accent italic">start free</span>
         </h2>
         <p className="mx-auto mt-4 max-w-md text-muted-foreground">
           Every membership starts with a 7-day free trial. No commitment, no pressure.
@@ -419,18 +432,20 @@ export function Pricing() {
         {plans.map((plan) => (
           <div
             key={plan.name}
-            className={`relative rounded-[2rem] px-8 py-10 shadow-soft ${
-              plan.best ? "bg-primary text-primary-foreground" : "bg-card"
+            className={`relative rounded-lg border px-8 py-10 ${
+              plan.best
+                ? "border-primary bg-primary text-primary-foreground"
+                : "border-border bg-card"
             }`}
           >
             {plan.best ? (
-              <span className="absolute -top-3 right-8 rounded-full bg-accent px-4 py-1.5 text-xs font-semibold tracking-wide text-accent-foreground uppercase">
+              <span className="absolute -top-3 right-8 rounded-full bg-tan px-4 py-1.5 text-xs font-semibold tracking-wide text-foreground uppercase">
                 Best Value
               </span>
             ) : null}
             <h3 className="text-lg font-semibold">{plan.name}</h3>
             <p className="mt-4 flex items-end gap-1">
-              <span className="text-5xl font-bold tracking-tight">{plan.price}</span>
+              <span className="font-serif text-5xl font-medium tracking-tight">{plan.price}</span>
               <span className={plan.best ? "opacity-80" : "text-muted-foreground"}>
                 {plan.period}
               </span>
@@ -468,11 +483,10 @@ export function Newsletter() {
 
   return (
     <section id="newsletter" className="mx-auto max-w-5xl px-5 pb-24 sm:px-8 lg:pb-36">
-      <div className="rounded-[2.5rem] bg-sage-soft/70 px-6 py-16 text-center sm:px-12">
+      <div className="rounded-lg border border-border bg-secondary/60 px-6 py-16 text-center sm:px-12">
         <Eyebrow>Not ready yet?</Eyebrow>
-        <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-          Get a free family menu{" "}
-          <span className="font-script text-4xl text-accent sm:text-5xl">every month</span>
+        <h2 className="mt-2 font-serif text-3xl font-medium tracking-tight sm:text-4xl">
+          Get a free family menu <span className="text-accent italic">every month</span>
         </h2>
         <p className="mx-auto mt-4 max-w-md text-muted-foreground">
           One email, five dinners, a grocery list. Unsubscribe whenever you like.

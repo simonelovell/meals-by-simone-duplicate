@@ -15,7 +15,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur">
       <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 sm:px-8 lg:flex lg:justify-between">
         <a href="#top" className="flex min-w-0 flex-col leading-none">
-          <span className="font-script text-2xl text-primary sm:text-3xl">Meals</span>
+          <span className="font-serif text-2xl font-medium text-primary sm:text-3xl">Meals</span>
           <span className="truncate text-[0.7rem] font-medium tracking-[0.28em] text-muted-foreground uppercase">
             By Simone
           </span>
@@ -26,7 +26,7 @@ export function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
+              className="text-xs font-medium tracking-[0.15em] text-foreground/80 uppercase transition-colors hover:text-accent"
             >
               {link.label}
             </a>
@@ -36,13 +36,13 @@ export function Header() {
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
           <a
             href="#pricing"
-            className="hidden rounded-full px-4 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-primary sm:inline-flex"
+            className="hidden rounded-full px-4 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-accent sm:inline-flex"
           >
             Login
           </a>
           <a
             href="#pricing"
-            className="inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-soft transition-transform hover:-translate-y-0.5"
+            className="inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-xs font-medium tracking-wide text-primary-foreground uppercase transition-opacity hover:opacity-85"
           >
             Join Now
           </a>
@@ -93,7 +93,7 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           <div>
-            <p className="font-script text-3xl text-primary">Meals</p>
+            <p className="font-serif text-3xl font-medium text-primary">Meals</p>
             <p className="text-[0.7rem] font-medium tracking-[0.28em] text-muted-foreground uppercase">
               By Simone
             </p>
@@ -110,13 +110,13 @@ export function Footer() {
             <ul className="mt-4 space-y-2.5 text-sm text-muted-foreground">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="transition-colors hover:text-primary">
+                  <a href={link.href} className="transition-colors hover:text-accent">
                     {link.label}
                   </a>
                 </li>
               ))}
               <li>
-                <a href="#newsletter" className="transition-colors hover:text-primary">
+                <a href="#newsletter" className="transition-colors hover:text-accent">
                   Newsletter
                 </a>
               </li>
@@ -137,7 +137,7 @@ export function Footer() {
                   key={label}
                   href="#top"
                   aria-label={label}
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-background text-foreground/80 shadow-soft transition-colors hover:text-primary"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border bg-background text-foreground/80 transition-colors hover:text-accent"
                 >
                   <Icon className="h-5 w-5" />
                 </a>
