@@ -39,7 +39,7 @@ export function Hero() {
     <section id="top" className="mx-auto max-w-6xl px-5 pt-14 pb-24 sm:px-8 sm:pt-24 lg:pb-36">
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-4 py-1.5 text-xs font-medium tracking-wide text-foreground uppercase">
+          <span className="inline-flex items-center gap-2 rounded-full bg-sage-soft px-4 py-1.5 text-xs font-medium tracking-wide text-primary uppercase">
             <Sparkles className="h-3.5 w-3.5" /> New menus every Sunday
           </span>
           <h1 className="mt-6 font-serif text-4xl leading-[1.1] font-medium tracking-tight text-foreground sm:text-5xl lg:text-6xl">
@@ -169,7 +169,7 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="bg-secondary/60 py-24 lg:py-36">
+    <section id="how-it-works" className="bg-sage-soft/50 py-24 lg:py-36">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:gap-20">
         <div className="overflow-hidden rounded-xl border border-border">
           <img
@@ -379,7 +379,7 @@ export function Benefits() {
             key={title}
             className="rounded-lg border border-border bg-card px-8 py-10 text-center"
           >
-            <span className="inline-flex h-16 w-16 items-center justify-center rounded-full border border-border bg-secondary">
+            <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-sage-soft">
               <Icon className="h-7 w-7 text-primary" />
             </span>
             <h3 className="mt-6 text-xl font-semibold">{title}</h3>
@@ -483,7 +483,7 @@ export function Newsletter() {
 
   return (
     <section id="newsletter" className="mx-auto max-w-5xl px-5 pb-24 sm:px-8 lg:pb-36">
-      <div className="rounded-lg border border-border bg-secondary/60 px-6 py-16 text-center sm:px-12">
+      <div className="rounded-lg border border-border bg-sage-soft/70 px-6 py-16 text-center sm:px-12">
         <Eyebrow>Not ready yet?</Eyebrow>
         <h2 className="mt-2 font-serif text-3xl font-medium tracking-tight sm:text-4xl">
           Get a free family menu <span className="text-accent italic">every month</span>
